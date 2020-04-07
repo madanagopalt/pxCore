@@ -57,6 +57,7 @@ printExecLogs()
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 # Start testRunner ...
+export SPARK_USE_JSC=1
 rm -rf /var/tmp/spark.log
 cd $TRAVIS_BUILD_DIR/examples/pxScene2d/src/spark.app/Contents/MacOS
 ./spark.sh -enableVideo=false $TESTRUNNERURL?tests=$TESTS &
