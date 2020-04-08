@@ -70,9 +70,6 @@ then
   sh "build_$TRAVIS_OS_NAME.sh" 
   checkError $? "#### Build/unittests/execution [build_$TRAVIS_OS_NAME.sh] failed" "Either build problem/execution problem" "Analyze corresponding log file"
 
-  sh "unittests_$TRAVIS_OS_NAME.sh" 
-  checkError $? "#### Build/unittests/execution [unittests_$TRAVIS_OS_NAME.sh] failed" "Either build problem/execution problem" "Analyze corresponding log file"
-
   sh "execute_$TRAVIS_OS_NAME.sh" "node"
   checkError $? "#### Build/unittests/execution [execute_$TRAVIS_OS_NAME.sh] failed" "Either build problem/execution problem" "Analyze corresponding log file"
 
