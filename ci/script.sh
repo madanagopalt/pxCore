@@ -73,7 +73,10 @@ then
   sh "unittests_$TRAVIS_OS_NAME.sh" 
   checkError $? "#### Build/unittests/execution [unittests_$TRAVIS_OS_NAME.sh] failed" "Either build problem/execution problem" "Analyze corresponding log file"
 
-  sh "execute_$TRAVIS_OS_NAME.sh" 
+  sh "execute_$TRAVIS_OS_NAME.sh" "node"
+  checkError $? "#### Build/unittests/execution [execute_$TRAVIS_OS_NAME.sh] failed" "Either build problem/execution problem" "Analyze corresponding log file"
+
+  sh "execute_$TRAVIS_OS_NAME.sh" "jsc"
   checkError $? "#### Build/unittests/execution [execute_$TRAVIS_OS_NAME.sh] failed" "Either build problem/execution problem" "Analyze corresponding log file"
 
   sh "code_coverage_$TRAVIS_OS_NAME.sh"
