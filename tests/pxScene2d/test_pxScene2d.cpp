@@ -174,39 +174,63 @@ class pxScene2dTest : public testing::Test
       mUrl = "test_OSCILLATE.js";
       mView = new pxScriptView(mUrl,"");
       process(5.0);
+      printf("Madana 1\n"); fflush(stdout);
       rtObjectRef   scene = mView->mScene;
       pxScene2d* sceneptr = (pxScene2d*)scene.getPtr();
       ASSERT_NE(sceneptr, nullptr); 
       
+      printf("Madana 12\n"); fflush(stdout);
       mRoot = sceneptr->getRoot();
+      printf("Madana 13\n"); fflush(stdout);
       vector<rtRef<pxObject> > childrenVector = mRoot->mChildren ;
+      printf("Madana 14\n"); fflush(stdout);
       EXPECT_TRUE ( RT_OK == childrenVector[2]->moveToBack()); 
+      printf("Madana 15\n"); fflush(stdout);
       EXPECT_TRUE ( RT_OK == childrenVector[2]->moveToFront()); 
       
+      printf("Madana 16\n"); fflush(stdout);
       EXPECT_TRUE ( RT_OK == childrenVector[3]->moveForward());
+      printf("Madana 17\n"); fflush(stdout);
       EXPECT_TRUE ( RT_OK == childrenVector[3]->moveBackward());
       childrenVector[2]->createSnapshotOfChildren();
+      printf("Madana 18\n"); fflush(stdout);
       childrenVector[3]->releaseData(false);
+      printf("Madana 19\n"); fflush(stdout);
       childrenVector[6]->reloadData(true);
+      printf("Madana 1\n"); fflush(stdout);
       EXPECT_TRUE ( RT_OK == childrenVector[2]->remove());
+      printf("Madana 1\n"); fflush(stdout);
       EXPECT_TRUE ( RT_OK == childrenVector[3]->removeAll());
+      printf("Madana 1\n"); fflush(stdout);
       mRoot->reloadData(false);
+      printf("Madana 1\n"); fflush(stdout);
       mRoot->reloadData(true);
+      printf("Madana 1\n"); fflush(stdout);
       EXPECT_TRUE ( RT_OK == mRoot->setPainting(true));  
+      printf("Madana 1\n"); fflush(stdout);
       EXPECT_TRUE ( RT_OK == mRoot->setPainting(false));
 
       rtObjectRef props = new rtMapObject();
       props.set("t","image");
       rtObjectRef animateObjTest;
+      printf("Madana 1\n"); fflush(stdout);
       EXPECT_TRUE ( RT_OK == mRoot->animateToObj(props, 20, 0, 1, 1, animateObjTest));
+      printf("Madana 1\n"); fflush(stdout);
 
 
+      printf("Madana 1\n"); fflush(stdout);
       EXPECT_TRUE(false == sceneptr->onMouseDown(3, 2, 0));
+      printf("Madana 1\n"); fflush(stdout);
       EXPECT_TRUE(false == sceneptr->onMouseUp(3, 2, 0));
+      printf("Madana 1\n"); fflush(stdout);
       EXPECT_TRUE(false == sceneptr->onMouseMove(3, 2));
+      printf("Madana 1\n"); fflush(stdout);
       EXPECT_TRUE(false == sceneptr->onKeyDown(3, 0));
+      printf("Madana 1\n"); fflush(stdout);
       EXPECT_TRUE(false == sceneptr->onKeyUp(3, 0));
+      printf("Madana 1\n"); fflush(stdout);
       EXPECT_TRUE(false == sceneptr->onChar(65));
+      printf("Madana 1\n"); fflush(stdout);
       
     }
    
