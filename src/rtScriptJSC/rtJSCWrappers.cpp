@@ -1046,6 +1046,7 @@ JSFunctionWrapper::JSFunctionWrapper(JSContextRef context, JSObjectRef funcObj)
   RtJSC::assertIsMainThread();
 }
 
+  
 JSFunctionWrapper::~JSFunctionWrapper()
 {
   //printf("destroy [%p] \n", this); fflush(stdout);
