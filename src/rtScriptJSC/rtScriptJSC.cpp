@@ -481,6 +481,7 @@ rtError rtScriptJSC::pump()
 rtError rtScriptJSC::collectGarbage()
 {
   if (gTopLevelContext) {
+    printf("Collecting garbage !!\n"); fflush(stdout);
     JSSynchronousGarbageCollectForDebugging(gTopLevelContext);
   }
   return RT_OK;
