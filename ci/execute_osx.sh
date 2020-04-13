@@ -78,7 +78,6 @@ while [ "$count" -le "$max_seconds" ]; do
 	printf "\n [execute_osx.sh] snoozing for 30 seconds (%d of %d) \n" $count $max_seconds
 	sleep 30; # seconds
 	grep "TEST RESULTS: " /var/tmp/spark.log   # string in [results.js] must be "TEST RESULTS: "
-        tail -f /var/tmp/spark.log
 	retVal=$?
 
 	if [ "$retVal" -eq 0 ] # text found    exit code from Grep is '1' if NOT found
