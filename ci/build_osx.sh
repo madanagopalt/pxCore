@@ -1,5 +1,6 @@
 #!/bin/sh
 
+
 BUILDLOGS=$TRAVIS_BUILD_DIR/logs/build_logs
 
 
