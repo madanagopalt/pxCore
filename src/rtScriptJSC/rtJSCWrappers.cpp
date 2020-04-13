@@ -566,6 +566,7 @@ static void rtObjectWrapper_finalize(JSObjectRef thisObject)
     }
   }
 
+  printf("MADANA FINALIZED OBJECT ...[%p] \n", p->v.toObject().getPtr()); fflush(stdout);
   RtJSC::dispatchOnMainLoop([p=p] {
       {
         rtObjectRef temp = p->v.toObject();
